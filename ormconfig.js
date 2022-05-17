@@ -25,12 +25,13 @@ switch (process.env.NODE_ENV) {
     });
     break;
   case 'production':
+    console.log(process.env.DATABASE_URL);
     Object.assign(dbConfig, {
       type: 'postgres',
       database: process.env.DATABASE_URL,
       // in production, run in js file
-      entities: ['**/*.entity.js'],
       migrationsRun: true,
+      entities: ['**/*.entity.js'],
       ssl: {
         rejectUnauthorized: false,
       },

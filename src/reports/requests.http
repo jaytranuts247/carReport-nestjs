@@ -1,0 +1,24 @@
+### create report 
+POST http://localhost:3000/reports
+content-type: application/json
+
+{
+    "make": "toyota",
+    "model": "camry",
+    "year": 1980,
+    "mileage": 100000,
+    "lng": 0,
+    "lat": 0,
+    "price": 10000
+}
+
+### approve report
+PATCH http://localhost:3000/reports/2
+content-type: application/json
+
+{
+   "approved": true
+}
+
+### get estimate car
+GET http://localhost:3000/reports?make=toyota&model=camry&lng=0&lat=0&mileage=20000&year=1980

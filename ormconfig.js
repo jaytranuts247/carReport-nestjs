@@ -32,6 +32,8 @@ switch (process.env.NODE_ENV) {
       // in production, run in js file
       migrationsRun: true,
       entities: ['**/*.entity.js'],
+      user: 'username',
+      password: 'password',
       ssl: {
         rejectUnauthorized: false,
       },
